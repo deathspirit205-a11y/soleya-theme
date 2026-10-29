@@ -111,6 +111,17 @@ add_filter(
 	3
 );
 
+// WordPress 6.9+ adds a script-module ID that is absent from the Astro output.
+add_filter(
+	'wp_script_attributes',
+	function ( $attributes ) {
+		if ( 'soleya-lucide-js-module' === ( $attributes['id'] ?? '' ) ) {
+			unset( $attributes['id'] );
+		}
+		return $attributes;
+	}
+);
+
 /*
  * Remove WordPress' default front-end output (styles, scripts, meta and links)
  * that the Astro pages do not have. Head tags are hardcoded per template.
