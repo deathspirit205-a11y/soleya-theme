@@ -6,6 +6,7 @@ get_header( null, array(
     'body_class'  => 'bg-soleya-cream text-slate-800 font-sans antialiased selection:bg-soleya-gold selection:text-soleya-navy',
     'head_part'   => 'template-parts/home/head',
 ));
+echo '    ';
 get_template_part( 'template-parts/home/hero' );
 get_template_part( 'template-parts/home/reiki-pillars-home-directly-below-hero' );
 get_template_part( 'template-parts/home/home-reiki-feature' );
