@@ -46,6 +46,9 @@ add_action(
 	}
 );
 
+// The Astro reference has no WordPress toolbar above the page.
+add_filter( 'show_admin_bar', '__return_false' );
+
 /*
  * Blog card / article fields (native custom fields, editable in the admin).
  */
