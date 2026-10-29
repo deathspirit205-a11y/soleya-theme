@@ -1,4 +1,21 @@
-<style>
+
+    
+    
+    
+
+    <!-- Google Fonts (same as original) -->
+    
+    
+    
+
+    <!-- Tailwind CSS -->
+
+
+    <!-- Same Tailwind config as original -->
+
+
+
+    <style>
         /* ---------- Shared utilities (kept from original) ---------- */
         .gold-btn {
             background: linear-gradient(135deg, #d4af37 0%, #c5a059 100%);
