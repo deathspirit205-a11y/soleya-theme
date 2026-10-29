@@ -93,7 +93,7 @@ add_action(
 
 		// Lucide (all icons) is only loaded on the home page, as on the Astro site.
 		if ( is_front_page() ) {
-			wp_enqueue_script_module( 'soleya-lucide', soleya_asset( 'js/lucide.js' ), array(), soleya_asset_version( 'js/lucide.js' ) );
+			wp_enqueue_script( 'soleya-lucide', soleya_asset( 'js/lucide.js' ), array(), soleya_asset_version( 'js/lucide.js' ), true );
 		}
 	}
 );
@@ -111,15 +111,17 @@ add_filter(
 	3
 );
 
-// WordPress 6.9+ adds a script-module ID that is absent from the Astro output.
+// Keep WordPress's script tag identical to Astro while still enqueueing the module.
 add_filter(
-	'wp_script_attributes',
-	function ( $attributes ) {
-		if ( 'soleya-lucide-js-module' === ( $attributes['id'] ?? '' ) ) {
-			unset( $attributes['id'] );
+	'script_loader_tag',
+	function ( $tag, $handle, $src ) {
+		if ( 'soleya-lucide' === $handle ) {
+			return '<script type="module" src="' . esc_url( $src ) . '"></script>' . "\n";
 		}
-		return $attributes;
-	}
+		return $tag;
+	},
+	10,
+	3
 );
 
 /*
