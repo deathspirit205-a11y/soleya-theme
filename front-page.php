@@ -3,6 +3,7 @@
 get_header( null, array(
     'title'       => 'Soleya Reiki - Tatiana | Reiki à La Guerche-de-Bretagne',
     'description' => 'Découvrez les séances de Reiki Usui proposées par Tatiana à La Guerche-de-Bretagne : séances en cabinet ou à distance, tarifs et prise de rendez-vous.',
+    'generator'   => 'Astro v7.3.8',
     'body_class'  => 'bg-soleya-cream text-slate-800 font-sans antialiased selection:bg-soleya-gold selection:text-soleya-navy',
     'head_part'   => 'template-parts/home/head',
 ));
